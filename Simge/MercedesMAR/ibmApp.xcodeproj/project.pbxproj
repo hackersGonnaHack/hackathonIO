@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01877432421AED456979D891 /* Pods_ibmAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224FDD712412C6D94B81F783 /* Pods_ibmAppTests.framework */; };
+		2E2ED3B121AF013600BA28E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ED3B021AF013600BA28E8 /* AppDelegate.swift */; };
+		2E2ED3B321AF013600BA28E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ED3B221AF013600BA28E8 /* ViewController.swift */; };
+		2E2ED3B621AF013600BA28E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2ED3B421AF013600BA28E8 /* Main.storyboard */; };
+		2E2ED3B821AF013700BA28E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2ED3B721AF013700BA28E8 /* Assets.xcassets */; };
+		2E2ED3BB21AF013700BA28E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2ED3B921AF013700BA28E8 /* LaunchScreen.storyboard */; };
+		2E2ED3C621AF013700BA28E8 /* ibmAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ED3C521AF013700BA28E8 /* ibmAppTests.swift */; };
+		FBDAA2146B900FD0CA8D8C1E /* Pods_ibmApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05FCF63C0C5C0F773035265 /* Pods_ibmApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E2ED3C221AF013700BA28E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E2ED3A521AF013600BA28E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E2ED3AC21AF013600BA28E8;
+			remoteInfo = ibmApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		224FDD712412C6D94B81F783 /* Pods_ibmAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibmAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		225A4A0E5A3D36FD317B8229 /* Pods-ibmApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibmApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ibmApp/Pods-ibmApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2E2ED3AD21AF013600BA28E8 /* ibmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E2ED3B021AF013600BA28E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2E2ED3B221AF013600BA28E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E2ED3B521AF013600BA28E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E2ED3B721AF013700BA28E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E2ED3BA21AF013700BA28E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2E2ED3BC21AF013700BA28E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E2ED3C121AF013700BA28E8 /* ibmAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ibmAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E2ED3C521AF013700BA28E8 /* ibmAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibmAppTests.swift; sourceTree = "<group>"; };
+		2E2ED3C721AF013700BA28E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3181085BA85D0D4A5FAA7FE4 /* Pods-ibmApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibmApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibmApp/Pods-ibmApp.release.xcconfig"; sourceTree = "<group>"; };
+		4958FB3DDDBA3014BCADC2D7 /* Pods-ibmAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibmAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ibmAppTests/Pods-ibmAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C05FCF63C0C5C0F773035265 /* Pods_ibmApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibmApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F242E36632EDDFC9C3FF6569 /* Pods-ibmAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibmAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibmAppTests/Pods-ibmAppTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E2ED3AA21AF013600BA28E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBDAA2146B900FD0CA8D8C1E /* Pods_ibmApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E2ED3BE21AF013700BA28E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01877432421AED456979D891 /* Pods_ibmAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E2ED3A421AF013600BA28E8 = {
+			isa = PBXGroup;
+			children = (
+				2E2ED3AF21AF013600BA28E8 /* ibmApp */,
+				2E2ED3C421AF013700BA28E8 /* ibmAppTests */,
+				2E2ED3AE21AF013600BA28E8 /* Products */,
+				B33C9893C5C983F1CAF0F035 /* Pods */,
+				76D912A91676A474F1057144 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2E2ED3AE21AF013600BA28E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E2ED3AD21AF013600BA28E8 /* ibmApp.app */,
+				2E2ED3C121AF013700BA28E8 /* ibmAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E2ED3AF21AF013600BA28E8 /* ibmApp */ = {
+			isa = PBXGroup;
+			children = (
+				2E2ED3B021AF013600BA28E8 /* AppDelegate.swift */,
+				2E2ED3B221AF013600BA28E8 /* ViewController.swift */,
+				2E2ED3B421AF013600BA28E8 /* Main.storyboard */,
+				2E2ED3B721AF013700BA28E8 /* Assets.xcassets */,
+				2E2ED3B921AF013700BA28E8 /* LaunchScreen.storyboard */,
+				2E2ED3BC21AF013700BA28E8 /* Info.plist */,
+			);
+			path = ibmApp;
+			sourceTree = "<group>";
+		};
+		2E2ED3C421AF013700BA28E8 /* ibmAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E2ED3C521AF013700BA28E8 /* ibmAppTests.swift */,
+				2E2ED3C721AF013700BA28E8 /* Info.plist */,
+			);
+			path = ibmAppTests;
+			sourceTree = "<group>";
+		};
+		76D912A91676A474F1057144 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C05FCF63C0C5C0F773035265 /* Pods_ibmApp.framework */,
+				224FDD712412C6D94B81F783 /* Pods_ibmAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B33C9893C5C983F1CAF0F035 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				225A4A0E5A3D36FD317B8229 /* Pods-ibmApp.debug.xcconfig */,
+				3181085BA85D0D4A5FAA7FE4 /* Pods-ibmApp.release.xcconfig */,
+				4958FB3DDDBA3014BCADC2D7 /* Pods-ibmAppTests.debug.xcconfig */,
+				F242E36632EDDFC9C3FF6569 /* Pods-ibmAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E2ED3AC21AF013600BA28E8 /* ibmApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E2ED3CA21AF013700BA28E8 /* Build configuration list for PBXNativeTarget "ibmApp" */;
+			buildPhases = (
+				2E5A86D5C6331F67C25A0BCF /* [CP] Check Pods Manifest.lock */,
+				2E2ED3A921AF013600BA28E8 /* Sources */,
+				2E2ED3AA21AF013600BA28E8 /* Frameworks */,
+				2E2ED3AB21AF013600BA28E8 /* Resources */,
+				1114B0CD70BFBD611E0D5FE3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ibmApp;
+			productName = ibmApp;
+			productReference = 2E2ED3AD21AF013600BA28E8 /* ibmApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2E2ED3C021AF013700BA28E8 /* ibmAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E2ED3CD21AF013700BA28E8 /* Build configuration list for PBXNativeTarget "ibmAppTests" */;
+			buildPhases = (
+				7893258280BF93C0E2C819F6 /* [CP] Check Pods Manifest.lock */,
+				2E2ED3BD21AF013700BA28E8 /* Sources */,
+				2E2ED3BE21AF013700BA28E8 /* Frameworks */,
+				2E2ED3BF21AF013700BA28E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E2ED3C321AF013700BA28E8 /* PBXTargetDependency */,
+			);
+			name = ibmAppTests;
+			productName = ibmAppTests;
+			productReference = 2E2ED3C121AF013700BA28E8 /* ibmAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E2ED3A521AF013600BA28E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Simge Helvaci";
+				TargetAttributes = {
+					2E2ED3AC21AF013600BA28E8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					2E2ED3C021AF013700BA28E8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 2E2ED3AC21AF013600BA28E8;
+					};
+				};
+			};
+			buildConfigurationList = 2E2ED3A821AF013600BA28E8 /* Build configuration list for PBXProject "ibmApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E2ED3A421AF013600BA28E8;
+			productRefGroup = 2E2ED3AE21AF013600BA28E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E2ED3AC21AF013600BA28E8 /* ibmApp */,
+				2E2ED3C021AF013700BA28E8 /* ibmAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E2ED3AB21AF013600BA28E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2ED3BB21AF013700BA28E8 /* LaunchScreen.storyboard in Resources */,
+				2E2ED3B821AF013700BA28E8 /* Assets.xcassets in Resources */,
+				2E2ED3B621AF013600BA28E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E2ED3BF21AF013700BA28E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1114B0CD70BFBD611E0D5FE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ibmApp/Pods-ibmApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ibmApp/Pods-ibmApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E5A86D5C6331F67C25A0BCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ibmApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7893258280BF93C0E2C819F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ibmAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E2ED3A921AF013600BA28E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2ED3B321AF013600BA28E8 /* ViewController.swift in Sources */,
+				2E2ED3B121AF013600BA28E8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E2ED3BD21AF013700BA28E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2ED3C621AF013700BA28E8 /* ibmAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E2ED3C321AF013700BA28E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E2ED3AC21AF013600BA28E8 /* ibmApp */;
+			targetProxy = 2E2ED3C221AF013700BA28E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2E2ED3B421AF013600BA28E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E2ED3B521AF013600BA28E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2E2ED3B921AF013700BA28E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E2ED3BA21AF013700BA28E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E2ED3C821AF013700BA28E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2E2ED3C921AF013700BA28E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E2ED3CB21AF013700BA28E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 225A4A0E5A3D36FD317B8229 /* Pods-ibmApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MVEYG6L952;
+				INFOPLIST_FILE = ibmApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simgehelvaci.ibmApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E2ED3CC21AF013700BA28E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3181085BA85D0D4A5FAA7FE4 /* Pods-ibmApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MVEYG6L952;
+				INFOPLIST_FILE = ibmApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simgehelvaci.ibmApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2E2ED3CE21AF013700BA28E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4958FB3DDDBA3014BCADC2D7 /* Pods-ibmAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MVEYG6L952;
+				INFOPLIST_FILE = ibmAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simgehelvaci.ibmAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ibmApp.app/ibmApp";
+			};
+			name = Debug;
+		};
+		2E2ED3CF21AF013700BA28E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F242E36632EDDFC9C3FF6569 /* Pods-ibmAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MVEYG6L952;
+				INFOPLIST_FILE = ibmAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simgehelvaci.ibmAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ibmApp.app/ibmApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E2ED3A821AF013600BA28E8 /* Build configuration list for PBXProject "ibmApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E2ED3C821AF013700BA28E8 /* Debug */,
+				2E2ED3C921AF013700BA28E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E2ED3CA21AF013700BA28E8 /* Build configuration list for PBXNativeTarget "ibmApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E2ED3CB21AF013700BA28E8 /* Debug */,
+				2E2ED3CC21AF013700BA28E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E2ED3CD21AF013700BA28E8 /* Build configuration list for PBXNativeTarget "ibmAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E2ED3CE21AF013700BA28E8 /* Debug */,
+				2E2ED3CF21AF013700BA28E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E2ED3A521AF013600BA28E8 /* Project object */;
+}
