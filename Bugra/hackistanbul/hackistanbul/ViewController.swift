@@ -25,7 +25,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         sceneView.delegate = self
         sceneView.showsStatistics = true
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         sceneView.showsStatistics = true
         let scene = SCNScene()
         sceneView.scene.rootNode.addChildNode(headNode)
@@ -67,11 +67,52 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     
   
-    func createNewNode(name:String,x:CGFloat,y:CGFloat,z:CGFloat) -> SCNNode
+    func createNewNode(name:String,x:Float,y:Float,z:Float) -> SCNNode
     {
-      
-        return SCNNode()
+        
+        let fontScale = Float(0.003)
+        let geoText = SCNText(string: name, extrusionDepth: 5)
+        geoText.font = UIFont (name: "KohinoorTelugu-Regular", size: CGFloat(300))
+        geoText.firstMaterial!.diffuse.contents = UIColor.white
+        
+        let textNode = SCNNode(geometry: geoText)
+        textNode.isHidden = false
+        textNode.scale = SCNVector3(fontScale, fontScale, fontScale)
+        
+        let (min, max) = (geoText.boundingBox.min, geoText.boundingBox.max)
+        let width = (max.x - min.x) * fontScale
+        let height = (max.y - min.y) * fontScale
+        
+        let textPlane = SCNPlane(width: CGFloat(width), height: CGFloat(height))
+        let planeNode = SCNNode(geometry: textPlane)
+        planeNode.scale = SCNVector3(0.1, 0.1, 0.1)
+        
+        let dx = min.x + 0.5 * (max.x - min.x)
+        let dy = min.y + 0.5 * (max.y - min.y)
+        let dz = min.z + 0.5 * (max.z - min.z)
+        //textNode.pivot = SCNMatrix4MakeTranslation(dx, dy, dz)
+        
+        textNode.position = SCNVector3(x: x, y: y, z: z)
+        // x sağa
+        // y ileri
+        // z yukarı
+        planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.clear.withAlphaComponent(0)
+        planeNode.geometry?.firstMaterial?.isDoubleSided = true
+        planeNode.position = textNode.position
+        textNode.eulerAngles = planeNode.eulerAngles
+        
+        //planeNode.position = SCNVector3(x.columns.3.x , x.columns.3.y , x.columns.3.z)
+        planeNode.name = name
+        
+        planeNode.addChildNode(textNode)
+        planeNode.isHidden = false
+        planeNode.eulerAngles.x = .pi/2
+        return planeNode
     }
+    
+    
+
+    
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
     
@@ -84,7 +125,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             headNode.position.z = anchorPos.z
             
             let fontScale = Float(0.003)
-            let geoText = SCNText(string: "Hello", extrusionDepth: 5)
+            let geoText = SCNText(string: "", extrusionDepth: 5)
             geoText.font = UIFont (name: "KohinoorTelugu-Regular", size: CGFloat(300))
             geoText.firstMaterial!.diffuse.contents = UIColor.white
             
@@ -106,7 +147,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             textNode.pivot = SCNMatrix4MakeTranslation(dx, dy, dz)
             
             
-            planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.black.withAlphaComponent(0.5)
+            planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.clear.withAlphaComponent(0)
             planeNode.geometry?.firstMaterial?.isDoubleSided = true
             planeNode.position = textNode.position
             textNode.eulerAngles = planeNode.eulerAngles
@@ -119,10 +160,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             headNode.addChildNode(planeNode)
             
 
-            planeNode.eulerAngles.x = -.pi/2
+            //headNode.eulerAngles.x = -.pi/2
             //node.addChildNode(planeNode)
             
             
+            
+            // x sağa
+            // y ileri
+            // z yukarı
+            
+            headNode.addChildNode(createNewNode(name: "Front Right", x: Float(1.5), y: Float(0.9), z: Float(-0.5)))
+            headNode.addChildNode(createNewNode(name: "Front Left", x: Float(-0.5), y: Float(0.9), z: Float(-0.5)))
+            
+            
+            headNode.addChildNode(createNewNode(name: "Rear Right", x: Float(1.5), y: Float(-2), z: Float(-0.5)))
+            headNode.addChildNode(createNewNode(name: "Rear Left", x: Float(-0.5), y: Float(-2), z: Float(-0.5)))
+
             
         }
         
@@ -146,6 +199,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let x = anchor.transform
         headNode.position = SCNVector3(x.columns.3.x, x.columns.3.y , x.columns.3.z)
+        headNode.eulerAngles.x = -.pi/2
     }
     
     
