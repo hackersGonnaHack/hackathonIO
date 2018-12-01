@@ -85,7 +85,8 @@ class ViewController: UIViewController,WKNavigationDelegate {
         self.view.addSubview(webView)
         self.view.sendSubviewToBack(webView)
         
-        getAdditionalInfo()
+        getInfo(type: "Additional Info",url2: "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/")
+        // getInfo(type: "Tire",url2: "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/")
     }
 
     
@@ -122,10 +123,14 @@ class ViewController: UIViewController,WKNavigationDelegate {
     }
     
     
-    func getAdditionalInfo()
+    func getInfo(type:String,url2:String)
     {
         let carID:String = "DB4D2536FE75E7CF5F"
-        let url:String = "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/"+carID
+      
+       
+        let url:String = url2 + carID 
+            
+    
         let method: HTTPMethod = .get
         
         let headers:HTTPHeaders = ["accept":"application/json","authorization":"Bearer "+"\(keyChain.get("access_token") ?? "bos")"]
@@ -135,25 +140,46 @@ class ViewController: UIViewController,WKNavigationDelegate {
         print(keyChain.get("access_token"))
         var response = alamoRequest(requestURL: url, method: method,headers: headers)
         for (key, value) in self.dictResp {
-            print("\(key) -> \(value)")
-            /*
-            colorname = "iridiumsilber metallic";
-            finorvin = 1HM5FBE8XH51AED91;
-            fueltype = Benzin;
-            id = DB4D2536FE75E7CF5F;
-            licenseplate = "S-GG-4744";
-            modelyear = 2017;
-            nickname = mmueller;
-            numberofdoors = 5;
-            numberofseats = 5;
-            powerhp = 333;
-            powerkw = 245;
-            salesdesignation = "E 400 4MATIC Limousine";
- */
-            if String(describing: key) == "colorname"
-            {
-                print("colorname3 = \(value)")
+           
+            switch type {
+            case "Additional Info":
+                    if String(describing: key) == "colorname"
+                    {
+                        print("colorname3 = \(value)")
+                    }
+                    if String(describing: key) == "fueltype"
+                    {
+                        print("fueltype3 = \(value)")
+                    }
+                    if String(describing: key) == "modelyear"
+                    {
+                        print("modelyear3 = \(value)")
+                    }
+                    if String(describing: key) == "numberofdoors"
+                    {
+                        print("numberofdoors3 = \(value)")
+                    }
+                    if String(describing: key) == "numberofseats"
+                    {
+                        print("numberofseats3 = \(value)")
+                    }
+                    if String(describing: key) == "salesdesignation"
+                    {
+                        print("salesdesignation3 = \(value)")
+                    }
+                    else {
+                        break
+                        
+                    }
+            case "Tire":
+                print("hi")
+            
+            default:
+                print("Invalid Tpe")
             }
+       
+           
+            
         }
 
         
@@ -214,7 +240,8 @@ class ViewController: UIViewController,WKNavigationDelegate {
                 let keyChain = KeychainSwift()
                 keyChain.set("\(accessToken)", forKey: "access_token")
                 keyChain.set("refresh_token", forKey: "\(refreshToken)")
-                self.getAdditionalInfo()
+               // self.getInfo(type: "Additional Info",url2: "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/DB4D2536FE75E7CF5F")
+                self.getInfo(type: "Tire",url2: "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/")
                 
                 break
             case .failure(let error):
