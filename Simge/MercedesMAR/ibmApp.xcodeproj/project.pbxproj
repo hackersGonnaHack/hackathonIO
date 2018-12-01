@@ -14,6 +14,7 @@
 		2E2ED3B821AF013700BA28E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2ED3B721AF013700BA28E8 /* Assets.xcassets */; };
 		2E2ED3BB21AF013700BA28E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2ED3B921AF013700BA28E8 /* LaunchScreen.storyboard */; };
 		2E2ED3C621AF013700BA28E8 /* ibmAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ED3C521AF013700BA28E8 /* ibmAppTests.swift */; };
+		2E87B5CF21B2F9FD00F5806C /* AdditionalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87B5CE21B2F9FD00F5806C /* AdditionalInformation.swift */; };
 		FBDAA2146B900FD0CA8D8C1E /* Pods_ibmApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05FCF63C0C5C0F773035265 /* Pods_ibmApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		2E2ED3C121AF013700BA28E8 /* ibmAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ibmAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2ED3C521AF013700BA28E8 /* ibmAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibmAppTests.swift; sourceTree = "<group>"; };
 		2E2ED3C721AF013700BA28E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E87B5CE21B2F9FD00F5806C /* AdditionalInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInformation.swift; sourceTree = "<group>"; };
 		3181085BA85D0D4A5FAA7FE4 /* Pods-ibmApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibmApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibmApp/Pods-ibmApp.release.xcconfig"; sourceTree = "<group>"; };
 		4958FB3DDDBA3014BCADC2D7 /* Pods-ibmAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibmAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ibmAppTests/Pods-ibmAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C05FCF63C0C5C0F773035265 /* Pods_ibmApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibmApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 				2E2ED3B721AF013700BA28E8 /* Assets.xcassets */,
 				2E2ED3B921AF013700BA28E8 /* LaunchScreen.storyboard */,
 				2E2ED3BC21AF013700BA28E8 /* Info.plist */,
+				2E87B5CE21B2F9FD00F5806C /* AdditionalInformation.swift */,
 			);
 			path = ibmApp;
 			sourceTree = "<group>";
@@ -236,12 +239,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ibmApp/Pods-ibmApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -291,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E87B5CF21B2F9FD00F5806C /* AdditionalInformation.swift in Sources */,
 				2E2ED3B321AF013600BA28E8 /* ViewController.swift in Sources */,
 				2E2ED3B121AF013600BA28E8 /* AppDelegate.swift in Sources */,
 			);

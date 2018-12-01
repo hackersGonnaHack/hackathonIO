@@ -128,7 +128,7 @@ class ViewController: UIViewController,WKNavigationDelegate {
         let carID:String = "DB4D2536FE75E7CF5F"
       
        
-        let url:String = url2 + carID 
+        let url:String = url2 + carID + "/tires"
             
     
         let method: HTTPMethod = .get
@@ -186,6 +186,10 @@ class ViewController: UIViewController,WKNavigationDelegate {
         
     }
     
+    func getInfo(type: String) {
+        
+    }
+    
     
     func alamoRequest(requestURL:String,method:HTTPMethod, headers:HTTPHeaders ) -> NSDictionary
     {
@@ -239,7 +243,7 @@ class ViewController: UIViewController,WKNavigationDelegate {
                 
                 let keyChain = KeychainSwift()
                 keyChain.set("\(accessToken)", forKey: "access_token")
-                keyChain.set("refresh_token", forKey: "\(refreshToken)")
+                keyChain.set("\(refreshToken)", forKey: "refresh_token")
                // self.getInfo(type: "Additional Info",url2: "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/DB4D2536FE75E7CF5F")
                 self.getInfo(type: "Tire",url2: "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/")
                 
