@@ -1,118 +1,155 @@
-//
-//  ViewController.swift
-//  hackistanbul
-//
-//  Created by Buğra Altuğ on 1.12.2018.
-//  Copyright © 2018 Buğra Altuğ. All rights reserved.
-//
+/*
+ 1) OBJ to usdz: xcrun usdz_converter Wineglass.obj Wineglass.usdz
+ 1) Or use "Vectary".
+ 
+ 2) usdz to scn: editor->conver to scene kit scene format
+ 
+ 3) decrease size!!
+ 
+ 
+ 
+ */
 
 import UIKit
 import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
-    @IBOutlet var sceneView: ARSCNView!
-    var referencePoint:SCNVector3!
     
+    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    var headNode: SCNNode=SCNNode()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set the view's delegate
-        sceneView.delegate = self
-        
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
         
         sceneView.delegate = self
         sceneView.showsStatistics = true
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         sceneView.showsStatistics = true
         let scene = SCNScene()
+        sceneView.scene.rootNode.addChildNode(headNode)
         sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-        
-        if let imageToTrack = ARReferenceImage.referenceImages(inGroupNamed: "test", bundle: Bundle.main)
+        if let imageToTrack = ARReferenceImage.referenceImages(inGroupNamed: "xx", bundle: Bundle.main)
         {
             configuration.detectionImages = imageToTrack
-            configuration.maximumNumberOfTrackedImages = 1
+            configuration.maximumNumberOfTrackedImages = 2
             print("Images Succesfully Added.")
         }
-
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(rec:)))
+        sceneView.addGestureRecognizer(tap)
         sceneView.session.run(configuration)
+        
     }
-    
+    @objc func handleTap(rec: UITapGestureRecognizer){
+        
+        if rec.state == .ended {
+            let location: CGPoint = rec.location(in: sceneView)
+            let hits = self.sceneView.hitTest(location, options: nil)
+            if !hits.isEmpty{
+                let tappedNode = hits.first?.node
+                print(tappedNode?.name)
+            }
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
         sceneView.session.pause()
     }
-
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        let x = anchor.transform
-        referencePoint = SCNVector3(x.columns.3.x, x.columns.3.y , x.columns.3.z)
-        print("Reference Point \(referencePoint ?? SCNVector3(1,2,3))")
+    
+    
+  
+    func createNewNode(name:String,x:CGFloat,y:CGFloat,z:CGFloat) -> SCNNode
+    {
+      
+        return SCNNode()
     }
-    // Override to create and configure nodes for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
-     
+    
         if anchor is ARImageAnchor
         {
-            let x = anchor.transform
-            referencePoint = SCNVector3(x.columns.3.x, x.columns.3.y , x.columns.3.z)
-            print("Reference Point \(referencePoint ?? SCNVector3(4,5,6))")
+            var anchorPos = anchor.transform.columns.3
+            
+            headNode.position.x = anchorPos.x
+            headNode.position.y = anchorPos.y
+            headNode.position.z = anchorPos.z
+            
+            let fontScale = Float(0.003)
             let geoText = SCNText(string: "Hello", extrusionDepth: 5)
             geoText.font = UIFont (name: "KohinoorTelugu-Regular", size: CGFloat(300))
             geoText.firstMaterial!.diffuse.contents = UIColor.white
             
             let textNode = SCNNode(geometry: geoText)
-            node.addChildNode(setNodeRef("tee", textNode))
+            textNode.isHidden = false
+            textNode.scale = SCNVector3(fontScale, fontScale, fontScale)
+            
+            let (min, max) = (geoText.boundingBox.min, geoText.boundingBox.max)
+            let width = (max.x - min.x) * fontScale
+            let height = (max.y - min.y) * fontScale
+            
+            let textPlane = SCNPlane(width: CGFloat(width), height: CGFloat(height))
+            let planeNode = SCNNode(geometry: textPlane)
+            planeNode.scale = SCNVector3(0.5, 0.5, 0.5)
+            
+            let dx = min.x + 0.5 * (max.x - min.x)
+            let dy = min.y + 0.5 * (max.y - min.y)
+            let dz = min.z + 0.5 * (max.z - min.z)
+            textNode.pivot = SCNMatrix4MakeTranslation(dx, dy, dz)
+            
+            
+            planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.black.withAlphaComponent(0.5)
+            planeNode.geometry?.firstMaterial?.isDoubleSided = true
+            planeNode.position = textNode.position
+            textNode.eulerAngles = planeNode.eulerAngles
+            
+            //planeNode.position = SCNVector3(x.columns.3.x , x.columns.3.y , x.columns.3.z)
+            planeNode.name = "name"
+            
+            planeNode.addChildNode(textNode)
+            planeNode.isHidden = false
+            headNode.addChildNode(planeNode)
+            
+
+            planeNode.eulerAngles.x = -.pi/2
+            //node.addChildNode(planeNode)
+            
+            
+            
         }
         
-        return node
+        return headNode
     }
     
-    func setNodeRef(_ name_: String, _ node: SCNNode) -> SCNNode
-    {
-        node.isHidden = false
-        //test ise
-        let scale = Float(0.003)
-        node.scale = SCNVector3(scale, scale, scale)
+    @objc func didTap(sender: UITapGestureRecognizer){
+        print("hai")
+    }
+    
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        // Called when any node has been added to the anchor
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+        // This method will help when any node has been removed from sceneview
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         
-        let (min, max) = (node.boundingBox.min, node.boundingBox.max)
-        let width = (max.x - min.x)*scale
-        let height = (max.y - min.y)*scale
-        
-        let plane = SCNPlane(width: CGFloat(width), height: CGFloat(height))
-        let planeNode = SCNNode(geometry: plane)
-        planeNode.scale = SCNVector3(0.5, 0.5, 0.5)
-        
-        let dx = min.x + 0.5 * (max.x - min.x)
-        let dy = min.y + 0.5 * (max.y - min.y)
-        let dz = min.z + 0.5 * (max.z - min.z)
-        node.pivot = SCNMatrix4MakeTranslation(dx, dy, dz)
-        
-        planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.black.withAlphaComponent(0.5)
-        planeNode.geometry?.firstMaterial?.isDoubleSided = true
-        planeNode.position = node.position
-        node.eulerAngles = planeNode.eulerAngles
-        
-        planeNode.name = name_
-        
-        planeNode.addChildNode(node)
-        planeNode.isHidden = false
-        sceneView.scene.rootNode.addChildNode(planeNode)
-        
-        planeNode.eulerAngles.x = -.pi/2
-        return planeNode
+        let x = anchor.transform
+        headNode.position = SCNVector3(x.columns.3.x, x.columns.3.y , x.columns.3.z)
+    }
+    
+    
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        // help us inform the user when the app is ready
     }
 }
